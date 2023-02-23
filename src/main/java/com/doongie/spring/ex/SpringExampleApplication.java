@@ -11,8 +11,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
-
-
 @SpringBootApplication
 @MapperScan(basePackages="com.doongie.spring.ex.*")
 public class SpringExampleApplication {
