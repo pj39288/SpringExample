@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.doongie.spring.ex.myBatis.bo.ReviewBO;
 import com.doongie.spring.ex.myBatis.model.Review;
 
-import jakarta.servlet.http.HttpServletRequest;
-
 @Controller
 public class ReviewController {
 
@@ -27,5 +25,24 @@ public class ReviewController {
 		Review review = reviewBO.getReview(id);
 		
 		return review;
+	}
+	
+	@RequestMapping("/mybatis/ex02")
+	@ResponseBody
+	public String addReview() {
+		
+		// int count = reviewBO.addReview(4, "콤비네이션피자", "김인규", 4.5, "할인도 받고 잘 먹었어요");
+		
+		Review review = new Review();
+		review.setStoreId(2);
+		review.setMenu("뿌링클");
+		review.setUserName("김인규");
+		review.setPoint(4.0);
+		review.setReview("역시 뿌링클은 진리입니다");
+		
+		int count = reviewBO.addReviewByObject(review);
+		
+		return "실행결과 : " + count;
+		
 	}
 }

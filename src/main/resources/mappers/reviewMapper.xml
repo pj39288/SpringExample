@@ -22,4 +22,59 @@
   			`id` = #{id}
   	
   	</select>
+  	
+  	<insert id="insertReview"  parameterType="map">
+  		INSERT INTO
+  			`new_review`
+  			(
+	  			`storeId`
+	  			, `menu`
+	  			, `userName`
+	  			, `point`
+	  			, `review`
+	  			, `createdAt`
+	  			, `updatedAt`
+  			)
+  		VALUE
+  		(
+  			#{storeId}
+  			, #{menu}
+  			, #{userName}
+  		  	, #{point}
+  			, #{review}
+  			, now()
+  			, now()
+  		)
+  		 	
+  	</insert>
+  	
+  	<insert id="insertReviewByObject" parameterType="com.doongie.spring.ex.myBatis.model.Review">
+		INSERT INTO
+  			`new_review`
+  			(
+	  			`storeId`
+	  			, `menu`
+	  			, `userName`
+	  			, `point`
+	  			, `review`
+	  			, `createdAt`
+	  			, `updatedAt`
+  			)
+  		VALUE
+  		(
+  			#{storeId}
+  			, #{menu}
+  			, #{userName}
+  			, #{point}
+  			, #{review}
+  			, now()
+  			, now()
+  		)
+  		
+  		
+  	
+  	
+  	</insert>
+  	
+  	
   </mapper>
