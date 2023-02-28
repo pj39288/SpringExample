@@ -13,10 +13,14 @@ public class UserBO {
 	private UserDAO userDAO;
 	
 	// 이름, 생년월일, 이메일, 자기소개 저장
-	public int addUser(String name, String birthday, String email, String introduce) {
+	public int addUser(String name, String yyyymmdd, String email, String introduce) {
 		
-		return userDAO.insertUser(name, birthday, email, introduce);
+		return userDAO.insertUser(name, yyyymmdd, email, introduce);
 	
+	}
+	
+	public int addUserByObject(User user) {
+		return userDAO.insertUserByObject(user);
 	}
 	
 	public User getLastUser() {

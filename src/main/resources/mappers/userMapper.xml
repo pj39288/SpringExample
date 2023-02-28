@@ -9,28 +9,52 @@
  	<insert id="insertUser" parameterType="map">
  		INSERT INTO
  			`new_user`
- 			(
+ 		(
  				`name`
  				, `yyyymmdd`
- 				, `email`
  				, `introduce`
- 				, createdAt`
- 				, updatedAt
- 			)
+ 				, `email`
+ 				, `createdAt`
+ 				, `updatedAt`
+ 		)
  		VALUE
  		(
- 		  			#{name}
- 		 		  	, #{yyyymmdd}
- 		 		  	, #{email}
- 		 		  	, #{introduce}
- 		 		  	, now()
- 		 		  	, now()
- 		 		  
- 		
+ 	  			#{name}
+ 	 		  	, #{yyyymmdd}
+ 	 		  	, #{introduce}
+ 	 		  	, #{email}
+ 	 		  	, now()
+ 			  	, now()
  		)
  			
  	
  	</insert>
+ 	
+ 	<insert id="insertUserByObject" parameterType="com.doongie.spring.ex.jsp.model.User"
+ 	useGeneratedKeys="true" keyProperty="id">
+ 		INSERT INTO
+ 		 	`new_user`
+ 		(
+ 			`name`
+ 			, `yyyymmdd`
+ 			, `email`
+ 			, `introduce`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		)
+ 		VALUE
+ 		(
+ 			#{name}
+ 			, #{yyyymmdd}
+ 			, #{email}
+ 		    , #{introduce}
+ 		 	, now()
+ 		 	, now()
+ 		
+ 		)
+ 	
+ 	</insert>
+ 	
  	
  	<select id="selectLastUser" resultType="com.doongie.spring.ex.jsp.model.User">
  	
@@ -40,8 +64,8 @@
  			, `yyyymmdd`
  			, `email`
 			, `introduce`
- 			, createdAt`
- 			, updatedAt 	
+ 			, `createdAt`
+ 			, `updatedAt`	
  		FROM
  			`new_user`	
  		ORDER BY

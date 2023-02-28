@@ -10,10 +10,13 @@ public interface UserDAO {
 	
 	public int insertUser(
 			@Param("name") String name
-			, @Param("birthday") String birthday
+			, @Param("yyyymmdd") String yyyymmdd
 			, @Param("email") String email
 			, @Param("introduce") String introduce);
 	
+	public int insertUserByObject(User user);
+	
 	public User selectLastUser();
+	
 
 }

@@ -12,12 +12,12 @@
 	
 		<tr>
 			<td>id</td>
-			<td>${user.id}</td>
+			<td>${user.id }</td>
 		</tr>
 		
 		<tr>
 			<td>이름</td>
-			<td>${user.name}</td>
+			<td>${user.name }</td>
 		</tr>	
 
 		<tr>

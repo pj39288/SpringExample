@@ -26,6 +26,8 @@ public class ReviewBO {
 		
 	}
 	
+	
+	
 	public int addReviewByObject(Review review) {
 		
 		return reviewDAO.insertReviewByObject(review);
