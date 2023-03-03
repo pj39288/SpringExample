@@ -39,9 +39,36 @@
 	</c:forEach>
 	
 	<c:forEach var="fruit" items="${fruitList }">
-		<h4>${fruit } :::: ${status }</h4>
+		<h4>${fruit } :::: ${status.count } ${status.index } ${status.first } ${status.last }</h4>
 	
 	</c:forEach>
+	
+	
+	<table border="1">
+	
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>나이</th>
+				<th>취미</th>
+			
+			</tr>
+		</thead>
+		
+		
+		<tbody>
+			// 향상된 for 문 느낌으로
+			<c:forEach var="user" items="${userList }">
+			<tr>
+				<td>${user.name }</td>
+				<td>${user.age }</td>
+				<td>${user.hobby }</td>
+			</tr>		
+			</c:forEach>
+		</tbody>	
+	
+	
+	</table>
 	
 </body>
 </html>
