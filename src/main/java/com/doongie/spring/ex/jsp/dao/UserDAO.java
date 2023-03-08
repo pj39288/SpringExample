@@ -1,5 +1,7 @@
 package com.doongie.spring.ex.jsp.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -17,6 +19,8 @@ public interface UserDAO {
 	public int insertUserByObject(User user);
 	
 	public User selectLastUser();
+	
+	public List<User> selectUserList();
 	
 
 }

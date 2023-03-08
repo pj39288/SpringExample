@@ -1,5 +1,7 @@
 package com.doongie.spring.ex.jsp.bo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +27,10 @@ public class UserBO {
 	
 	public User getLastUser() {
 		return userDAO.selectLastUser();
+	}
+	
+	public List<User> getUserList() {
+		return userDAO.selectUserList();
 	}
 
 }
