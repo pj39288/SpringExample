@@ -62,4 +62,29 @@ public class NewUserController {
 	public String inputUser() {
 		return "ajax/input";
 	}
+	
+	// email 전달받고 중복여부 확인하고 
+	// 중복여부 결과를 response로 전달
+	@GetMapping("/is_duplicate")
+	@ResponseBody
+	public Map<String, Boolean> isDuplicateEmail(@RequestParam("email") String email) {
+		
+		// json 데이터 만들면됨 (key, value) 형태로
+		// 중복된경우
+		// {is_duplicate: true}
+		// 중복아닌경우
+		// {is_duplicate: false}
+		
+		Map<String, Boolean> resultMap = new HashMap<>();
+		
+		if(userBO.isDuplicateEmail(email)) {
+			// 중복된 경우 (true값이므로 if문안에서 사용가능)
+			resultMap.put("is_duplicate", true); 
+		} else {
+			resultMap.put("is_duplicate", false);
+		}
+		
+		return resultMap;
+		
+	}
 }

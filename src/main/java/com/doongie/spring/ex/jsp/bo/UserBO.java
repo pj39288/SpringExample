@@ -32,5 +32,16 @@ public class UserBO {
 	public List<User> getUserList() {
 		return userDAO.selectUserList();
 	}
+	
+	public boolean isDuplicateEmail(String email) {
+		int count = userDAO.selectCountEmail(email);
+		
+		if(count == 0) {
+			//중복되지않은게 명확
+			return false;
+		} else {
+			return true;
+		}
+	}
 
 }
