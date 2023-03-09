@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class AjaxController {
 	
 	// 사람정보: 이름, 나이를 json으로 response에 담는 기능
+	// json 이란 {key, 값} 쌍으로 표현하는것
 	@GetMapping("/ajax/request")
 	@ResponseBody
 	public Map<String, String > testRequest() {
