@@ -34,7 +34,7 @@
 					type:"get"
 					, url:"/ajax/is_duplicate"
 					, data:{"email":email}
-					, success:function(date) {
+					, success:function(data) {
 						if(data.is_duplicate){
 							// 중복 경우
 							alert("중복되었습니다");
